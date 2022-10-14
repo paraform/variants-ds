@@ -1,0 +1,62 @@
+.root {
+  all: unset;
+  position: relative;
+  background: theme("colors.loContrast");
+  border-radius: theme("borderRadius.full");
+  border: theme("borderWidth.2") solid theme("colors.subtle2");
+  transition: box-shadow;
+  transition-duration: theme("transitionDuration.300");
+  transition-timing-function: ease-in;
+}
+.root:hover:enabled {
+  cursor: pointer;
+  background: theme("colors.tint");
+}
+.root:focus-visible {
+  outline: theme("borderWidth.2") solid theme("colors.sky.500");
+  box-shadow: theme("boxShadow.focus");
+}
+[data-state="checked"].root {
+  background: theme("colors.subtle2");
+}
+[data-state="checked"].root:hover:enabled {
+  background: theme("colors.subtle3");
+}
+
+/* Sizes */
+.sm {
+  width: theme("width.8");
+  height: theme("height.4");
+}
+[data-state="checked"].sm {
+  transform: translateX(theme("spacing.4"));
+}
+.md {
+  width: theme("width.11");
+  height: theme("height.6");
+}
+[data-state="checked"].md > * {
+  transform: translateX(theme("spacing.6"));
+}
+
+/* Elements */
+.thumb {
+  display: block;
+  background: theme("colors.bold1");
+  border-radius: theme("borderRadius.full");
+  box-shadow: theme("boxShadow.md");
+  transition: transform;
+  transition-duration: theme("transitionDuration.200");
+  will-change: transform;
+}
+[data-state="checked"].thumb {
+  background: theme("colors.bold1");
+}
+.sm .thumb {
+  width: theme("width.4");
+  height: theme("height.4");
+}
+.md .thumb {
+  width: theme("width.6");
+  height: theme("height.6");
+}

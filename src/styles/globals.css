@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ui semantic tokens */
+  :root {
+    --ui-tint: theme("colors.purple.50");
+    --ui-subtle-1: theme("colors.purple.100");
+    --ui-subtle-2: theme("colors.purple.200");
+    --ui-subtle-3: theme("colors.purple.300");
+    --ui-subtle-4: theme("colors.purple.400");
+    --ui-bold-1: theme("colors.purple.500");
+    --ui-bold-2: theme("colors.purple.600");
+    --ui-bold-3: theme("colors.purple.700");
+    --ui-bold-4: theme("colors.purple.800");
+    --ui-darken: theme("colors.purple.900");
+    --ui-lo-contrast: theme("colors.white");
+    --ui-hi-contrast: theme("colors.black");
+  }
+
+  .dark {
+    --ui-lo-contrast: theme("colors.black");
+    --ui-hi-contrast: theme("colors.white");
+    --ui-tint: theme("colors.purple.900");
+    --ui-subtle-1: theme("colors.purple.800");
+    --ui-subtle-2: theme("colors.purple.700");
+    --ui-subtle-3: theme("colors.purple.600");
+    --ui-subtle-4: theme("colors.purple.500");
+    --ui-bold-1: theme("colors.purple.400");
+    --ui-bold-2: theme("colors.purple.300");
+    --ui-bold-3: theme("colors.purple.200");
+    --ui-bold-4: theme("colors.purple.100");
+    --ui-darken: theme("colors.purple.50");
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: theme("fontFamily.sans");
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+  /* colorway utilities */
+  .primary {
+    --ui-tint: theme("colors.purple.50");
+    --ui-subtle-1: theme("colors.purple.100");
+    --ui-subtle-2: theme("colors.purple.200");
+    --ui-subtle-3: theme("colors.purple.300");
+    --ui-subtle-4: theme("colors.purple.400");
+    --ui-bold-1: theme("colors.purple.500");
+    --ui-bold-2: theme("colors.purple.600");
+    --ui-bold-3: theme("colors.purple.700");
+    --ui-bold-4: theme("colors.purple.800");
+    --ui-darken: theme("colors.purple.900");
+    --ui-lo-contrast: theme("colors.white");
+    --ui-hi-contrast: theme("colors.black");
+  }
+
+  .dark .primary {
+    --ui-lo-contrast: theme("colors.black");
+    --ui-hi-contrast: theme("colors.white");
+    --ui-tint: theme("colors.purple.900");
+    --ui-subtle-1: theme("colors.purple.800");
+    --ui-subtle-2: theme("colors.purple.700");
+    --ui-subtle-3: theme("colors.purple.600");
+    --ui-subtle-4: theme("colors.purple.500");
+    --ui-bold-1: theme("colors.purple.400");
+    --ui-bold-2: theme("colors.purple.300");
+    --ui-bold-3: theme("colors.purple.200");
+    --ui-bold-4: theme("colors.purple.100");
+    --ui-darken: theme("colors.purple.50");
+  }
+
+  .neutral {
+    --ui-tint: theme("colors.zinc.50");
+    --ui-subtle-1: theme("colors.zinc.100");
+    --ui-subtle-2: theme("colors.zinc.200");
+    --ui-subtle-3: theme("colors.zinc.300");
+    --ui-subtle-4: theme("colors.zinc.400");
+    --ui-bold-1: theme("colors.zinc.500");
+    --ui-bold-2: theme("colors.zinc.600");
+    --ui-bold-3: theme("colors.zinc.700");
+    --ui-bold-4: theme("colors.zinc.800");
+    --ui-darken: theme("colors.zinc.900");
+  }
+
+  .dark .neutral {
+    --ui-tint: theme("colors.zinc.900");
+    --ui-subtle-1: theme("colors.zinc.800");
+    --ui-subtle-2: theme("colors.zinc.700");
+    --ui-subtle-3: theme("colors.zinc.600");
+    --ui-subtle-4: theme("colors.zinc.500");
+    --ui-bold-1: theme("colors.zinc.400");
+    --ui-bold-2: theme("colors.zinc.300");
+    --ui-bold-3: theme("colors.zinc.200");
+    --ui-bold-4: theme("colors.zinc.100");
+    --ui-darken: theme("colors.zinc.50");
+  }
+
+  .success {
+    --ui-tint: theme("colors.green.50");
+    --ui-subtle-1: theme("colors.green.100");
+    --ui-subtle-2: theme("colors.green.200");
+    --ui-subtle-3: theme("colors.green.300");
+    --ui-subtle-4: theme("colors.green.400");
+    --ui-bold-1: theme("colors.green.500");
+    --ui-bold-2: theme("colors.green.600");
+    --ui-bold-3: theme("colors.green.700");
+    --ui-bold-4: theme("colors.green.800");
+    --ui-darken: theme("colors.green.900");
+  }
+
+  .dark .success {
+    --ui-tint: theme("colors.green.900");
+    --ui-subtle-1: theme("colors.green.800");
+    --ui-subtle-2: theme("colors.green.700");
+    --ui-subtle-3: theme("colors.green.600");
+    --ui-subtle-4: theme("colors.green.500");
+    --ui-bold-1: theme("colors.green.400");
+    --ui-bold-2: theme("colors.green.300");
+    --ui-bold-3: theme("colors.green.200");
+    --ui-bold-4: theme("colors.green.100");
+    --ui-darken: theme("colors.green.50");
+  }
+
+  .danger {
+    --ui-tint: theme("colors.red.50");
+    --ui-subtle-1: theme("colors.red.100");
+    --ui-subtle-2: theme("colors.red.200");
+    --ui-subtle-3: theme("colors.red.300");
+    --ui-subtle-4: theme("colors.red.400");
+    --ui-bold-1: theme("colors.red.500");
+    --ui-bold-2: theme("colors.red.600");
+    --ui-bold-3: theme("colors.red.700");
+    --ui-bold-4: theme("colors.red.800");
+    --ui-darken: theme("colors.red.900");
+  }
+
+  .dark .danger {
+    --ui-tint: theme("colors.red.900");
+    --ui-subtle-1: theme("colors.red.800");
+    --ui-subtle-2: theme("colors.red.700");
+    --ui-subtle-3: theme("colors.red.600");
+    --ui-subtle-4: theme("colors.red.500");
+    --ui-bold-1: theme("colors.red.400");
+    --ui-bold-2: theme("colors.red.300");
+    --ui-bold-3: theme("colors.red.200");
+    --ui-bold-4: theme("colors.red.100");
+    --ui-darken: theme("colors.red.50");
+  }
+
+  .warning {
+    --ui-tint: theme("colors.orange.50");
+    --ui-subtle-1: theme("colors.orange.100");
+    --ui-subtle-2: theme("colors.orange.200");
+    --ui-subtle-3: theme("colors.orange.300");
+    --ui-subtle-4: theme("colors.orange.400");
+    --ui-bold-1: theme("colors.orange.500");
+    --ui-bold-2: theme("colors.orange.600");
+    --ui-bold-3: theme("colors.orange.700");
+    --ui-bold-4: theme("colors.orange.800");
+    --ui-darken: theme("colors.orange.900");
+  }
+
+  .dark .warning {
+    --ui-tint: theme("colors.orange.900");
+    --ui-subtle-1: theme("colors.orange.800");
+    --ui-subtle-2: theme("colors.orange.700");
+    --ui-subtle-3: theme("colors.orange.600");
+    --ui-subtle-4: theme("colors.orange.500");
+    --ui-bold-1: theme("colors.orange.400");
+    --ui-bold-2: theme("colors.orange.300");
+    --ui-bold-3: theme("colors.orange.200");
+    --ui-bold-4: theme("colors.orange.100");
+    --ui-darken: theme("colors.orange.50");
+  }
+}

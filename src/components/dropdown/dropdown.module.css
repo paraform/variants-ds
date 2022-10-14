@@ -1,0 +1,90 @@
+.content {
+  min-width: theme("width.40");
+  background: theme("colors.loContrast");
+  border-radius: theme("borderRadius.md");
+  padding: theme("spacing.2") 0;
+  color: theme("colors.bold1");
+  box-shadow: theme("boxShadow.xl");
+}
+:global(.dark) .content {
+  color: theme("colors.white");
+  background: theme("colors.tint");
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .content {
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transfor, opacity;
+  }
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  font-size: theme("fontSize.xs");
+  color: inherit;
+  padding: theme("spacing.1") theme("spacing.2") theme("spacing.1")
+    theme("spacing.6");
+  cursor: default;
+  user-select: none;
+  min-height: theme("height.8");
+  align-items: center;
+  gap: theme("gap.2");
+}
+.item > svg {
+  width: theme("width.4");
+  height: theme("height.4");
+  fill: inherit;
+}
+/* .item[data-disabled] {
+  color: theme("colors.subtle2");
+  pointer-events: none;
+  cursor: not-allowed;
+} */
+.item:hover {
+  cursor: pointer;
+  background-color: theme("colors.subtle2");
+}
+.item:active {
+  background-color: theme("colors.subtle3");
+  color: theme("colors.bold3");
+}
+
+.item:focus-visible {
+  outline: none;
+  cursor: pointer;
+  background-color: theme("colors.subtle2");
+}
+
+.indicator {
+  position: absolute;
+  left: theme("spacing.1");
+  width: theme("width.4");
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: inherit;
+}
+
+.separator {
+  height: theme("height.px");
+  background-color: theme("colors.subtle2");
+  margin: theme("spacing.1") theme("spacing.1");
+}
+
+.arrow {
+  fill: theme("colors.loContrast");
+}
+:global(.dark) .arrow {
+  fill: theme("colors.tint");
+}
+
+.label {
+  padding: theme("spacing.1") theme("spacing.4");
+  font-size: theme("fontSize.2xs");
+  font-weight: theme("fontWeight.bold");
+  text-transform: uppercase;
+  color: theme("colors.bold3");
+  letter-spacing: theme("letterSpacing.widest");
+}

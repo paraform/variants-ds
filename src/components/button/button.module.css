@@ -1,0 +1,182 @@
+/* Base */
+.button {
+  box-sizing: border-box;
+  user-select: none;
+  border: theme("borderWidth.1") solid transparent;
+  display: inline-flex;
+  border-radius: theme("borderRadius.sm");
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow;
+  transition-duration: theme("transitionDuration.300");
+  transition-timing-function: ease-in;
+  gap: theme("spacing.2");
+}
+
+.button:hover:enabled {
+  cursor: pointer;
+}
+.button:focus-visible {
+  outline: none;
+  box-shadow: theme("boxShadow.focus");
+}
+.button::before,
+.button::after {
+  box-sizing: border-box;
+}
+.button:disabled {
+  background: theme("colors.gray.100");
+  color: theme("colors.gray.400");
+  border: theme("borderWidth.1") solid theme("colors.gray.100");
+  pointer-events: none;
+}
+
+/* Kinds: solid | outline | ghost | link */
+.solid {
+  background: theme("colors.bold1");
+  color: theme("colors.loContrast");
+  border-color: theme("colors.bold1");
+}
+.solid:hover {
+  background: theme("colors.bold2");
+  border-color: theme("colors.bold2");
+}
+.solid:active:enabled {
+  background: theme("colors.bold3");
+  border-color: theme("colors.bold3");
+}
+.flat {
+  background: theme("colors.subtle1");
+  color: theme("colors.bold3");
+  border-color: theme("colors.subtle1");
+}
+.flat:hover:enabled {
+  background: theme("colors.subtle2");
+  color: theme("colors.bold2");
+  border-color: theme("colors.subtle2");
+}
+.flat:active:enabled {
+  background: theme("colors.subtle4");
+  color: theme("colors.bold3");
+  border: theme("colors.subtle4");
+}
+.outline {
+  background: transparent;
+  color: theme("colors.bold1");
+  border-color: theme("colors.bold1");
+}
+.outline:hover:enabled {
+  background: theme("colors.subtle2");
+  color: theme("colors.bold2");
+}
+.outline:active:enabled {
+  background: theme("colors.subtle3");
+  color: theme("colors.bold3");
+}
+.ghost {
+  background: transparent;
+  color: theme("colors.bold1");
+  border-color: transparent;
+}
+.ghost:hover:enabled {
+  background: theme("colors.subtle1");
+  color: theme("colors.bold2");
+  border-color: theme("colors.subtle1");
+}
+.ghost:active:enabled {
+  background: theme("colors.subtle3");
+  color: theme("colors.bold3");
+  border: theme("colors.subtle3");
+}
+.link {
+  background: transparent;
+  color: theme("colors.bold1");
+  border-width: 0;
+  border-color: transparent;
+  text-decoration: underline;
+}
+.link:hover:enabled {
+  color: theme("colors.bold3");
+}
+.link:active:enabled {
+  color: theme("colors.darken");
+}
+.link:disabled {
+  background: transparent;
+  border: none;
+}
+
+/* Sizes */
+.xs {
+  height: theme("height.4");
+  font-size: theme("fontSize.xs");
+  padding-right: theme("spacing.1");
+  padding-left: theme("spacing.1");
+}
+
+.sm {
+  height: theme("height.6");
+  font-size: theme("fontSize.sm");
+  padding-right: theme("spacing.2");
+  padding-left: theme("spacing.2");
+}
+
+.md {
+  height: theme("height.8");
+  font-size: theme("fontSize.base");
+  padding-right: theme("spacing.3");
+  padding-left: theme("spacing.3");
+}
+
+.lg {
+  height: theme("height.10");
+  font-size: theme("fontSize.lg");
+  padding-right: theme("spacing.4");
+  padding-left: theme("spacing.4");
+}
+
+/* Is Rounded? */
+.rounded {
+  border-radius: theme("borderRadius.full");
+}
+
+/* Icon Button? */
+.icon {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  gap: 0;
+}
+
+/* Compound Variants */
+.icon.xs {
+  width: theme("width.4");
+  height: theme("height.4");
+}
+.icon.sm {
+  width: theme("width.6");
+  height: theme("height.6");
+}
+.icon.md {
+  width: theme("width.8");
+  height: theme("height.8");
+}
+.icon.lg {
+  width: theme("width.10");
+  height: theme("height.10");
+}
+
+.link.xs,
+.link.sm,
+.link.md,
+.link.lg {
+  width: theme("width.fit");
+  height: theme("height.fit");
+  padding: 0;
+}
+.link.rounded {
+  border-radius: theme("borderRadius.sm");
+}
