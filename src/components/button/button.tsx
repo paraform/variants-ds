@@ -26,6 +26,7 @@ const Button = React.forwardRef(
         {...rest}
         ref={ref}
         className={cx(
+          styles.button,
           colorway,
           kind && styles[kind],
           size && styles[size],

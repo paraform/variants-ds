@@ -9,12 +9,14 @@ import {
 import { useTheme } from "next-themes";
 
 import { Button, Dropdown, Switch } from "@/components";
+import Card from "@/components/card/card";
 
 interface LayoutProps {}
 
 const Layout: React.FC<LayoutProps> = (props) => {
   // todo: fix types
   const [size, setSize] = React.useState<any>("md");
+  const [elevation, setElevation] = React.useState<any>("lg");
   const [colorway, setColorway] = React.useState<any>("primary");
   const [rounded, setRounded] = React.useState(false);
   const [mounted, setMounted] = React.useState(false);
@@ -38,89 +40,123 @@ const Layout: React.FC<LayoutProps> = (props) => {
           }}
         />
       </div>
-      <Dropdown.Root>
-        <Dropdown.Trigger asChild>
-          <Button colorway={colorway} size={size} rounded={rounded}>
-            Open Dropdown
-          </Button>
-        </Dropdown.Trigger>
-        <Dropdown.Content side="top">
-          <Dropdown.Label>Rounded</Dropdown.Label>
-          <Dropdown.CheckboxItem checked={rounded} onCheckedChange={setRounded}>
-            <Dropdown.ItemIndicator>
-              <CheckIcon />
-            </Dropdown.ItemIndicator>
-            Is Rounded?
-          </Dropdown.CheckboxItem>
-          <Dropdown.Separator />
-          <Dropdown.Label>Colorway</Dropdown.Label>
-          <Dropdown.RadioGroup value={colorway} onValueChange={setColorway}>
-            <Dropdown.RadioItem value="primary">
+      <Card colorway={colorway} elevation={elevation}>
+        <Dropdown.Root>
+          <Dropdown.Trigger asChild>
+            <Button colorway={colorway} size={size} rounded={rounded}>
+              Open Dropdown
+            </Button>
+          </Dropdown.Trigger>
+          <Dropdown.Content side="top">
+            <Dropdown.Label>Rounded</Dropdown.Label>
+            <Dropdown.CheckboxItem
+              checked={rounded}
+              onCheckedChange={setRounded}
+            >
               <Dropdown.ItemIndicator>
-                <DotFilledIcon />
+                <CheckIcon />
               </Dropdown.ItemIndicator>
-              Primary
-            </Dropdown.RadioItem>
-            <Dropdown.RadioItem value="neutral">
-              <Dropdown.ItemIndicator>
-                <DotFilledIcon />
-              </Dropdown.ItemIndicator>
-              Neutral
-            </Dropdown.RadioItem>
-            <Dropdown.RadioItem value="success">
-              <Dropdown.ItemIndicator>
-                <DotFilledIcon />
-              </Dropdown.ItemIndicator>
-              Success
-            </Dropdown.RadioItem>
-            <Dropdown.RadioItem value="danger">
-              <Dropdown.ItemIndicator>
-                <DotFilledIcon />
-              </Dropdown.ItemIndicator>
-              Danger
-            </Dropdown.RadioItem>
-          </Dropdown.RadioGroup>
-          <Dropdown.Separator />
-          <Dropdown.Sub>
-            <Dropdown.SubTrigger asChild>
-              <Dropdown.Item>
-                Size
-                <ChevronRightIcon />
-              </Dropdown.Item>
-            </Dropdown.SubTrigger>
+              Is Rounded?
+            </Dropdown.CheckboxItem>
+            <Dropdown.Separator />
+            <Dropdown.Label>Colorway</Dropdown.Label>
+            <Dropdown.RadioGroup value={colorway} onValueChange={setColorway}>
+              <Dropdown.RadioItem value="primary">
+                <Dropdown.ItemIndicator>
+                  <DotFilledIcon />
+                </Dropdown.ItemIndicator>
+                Primary
+              </Dropdown.RadioItem>
+              <Dropdown.RadioItem value="neutral">
+                <Dropdown.ItemIndicator>
+                  <DotFilledIcon />
+                </Dropdown.ItemIndicator>
+                Neutral
+              </Dropdown.RadioItem>
+              <Dropdown.RadioItem value="success">
+                <Dropdown.ItemIndicator>
+                  <DotFilledIcon />
+                </Dropdown.ItemIndicator>
+                Success
+              </Dropdown.RadioItem>
+              <Dropdown.RadioItem value="danger">
+                <Dropdown.ItemIndicator>
+                  <DotFilledIcon />
+                </Dropdown.ItemIndicator>
+                Danger
+              </Dropdown.RadioItem>
+            </Dropdown.RadioGroup>
+            <Dropdown.Separator />
+            <Dropdown.Sub>
+              <Dropdown.SubTrigger asChild>
+                <Dropdown.Item>
+                  Size
+                  <ChevronRightIcon />
+                </Dropdown.Item>
+              </Dropdown.SubTrigger>
 
-            <Dropdown.SubContent sideOffset={2} alignOffset={-5}>
-              <Dropdown.Label>Sizes</Dropdown.Label>
-              <Dropdown.RadioGroup value={size} onValueChange={setSize}>
-                <Dropdown.RadioItem value="xs">
-                  <Dropdown.ItemIndicator>
-                    <DotFilledIcon />
-                  </Dropdown.ItemIndicator>
-                  xs
-                </Dropdown.RadioItem>
-                <Dropdown.RadioItem value="sm">
-                  <Dropdown.ItemIndicator>
-                    <DotFilledIcon />
-                  </Dropdown.ItemIndicator>
-                  sm
-                </Dropdown.RadioItem>
-                <Dropdown.RadioItem value="md">
-                  <Dropdown.ItemIndicator>
-                    <DotFilledIcon />
-                  </Dropdown.ItemIndicator>
-                  md
-                </Dropdown.RadioItem>
-                <Dropdown.RadioItem value="lg">
-                  <Dropdown.ItemIndicator>
-                    <DotFilledIcon />
-                  </Dropdown.ItemIndicator>
-                  lg
-                </Dropdown.RadioItem>
-              </Dropdown.RadioGroup>
-            </Dropdown.SubContent>
-          </Dropdown.Sub>
-        </Dropdown.Content>
-      </Dropdown.Root>
+              <Dropdown.SubContent sideOffset={2} alignOffset={-5}>
+                <Dropdown.Label>Sizes</Dropdown.Label>
+                <Dropdown.RadioGroup value={size} onValueChange={setSize}>
+                  <Dropdown.RadioItem value="xs">
+                    <Dropdown.ItemIndicator>
+                      <DotFilledIcon />
+                    </Dropdown.ItemIndicator>
+                    xs
+                  </Dropdown.RadioItem>
+                  <Dropdown.RadioItem value="sm">
+                    <Dropdown.ItemIndicator>
+                      <DotFilledIcon />
+                    </Dropdown.ItemIndicator>
+                    sm
+                  </Dropdown.RadioItem>
+                  <Dropdown.RadioItem value="md">
+                    <Dropdown.ItemIndicator>
+                      <DotFilledIcon />
+                    </Dropdown.ItemIndicator>
+                    md
+                  </Dropdown.RadioItem>
+                  <Dropdown.RadioItem value="lg">
+                    <Dropdown.ItemIndicator>
+                      <DotFilledIcon />
+                    </Dropdown.ItemIndicator>
+                    lg
+                  </Dropdown.RadioItem>
+                </Dropdown.RadioGroup>
+              </Dropdown.SubContent>
+            </Dropdown.Sub>
+            <Dropdown.Sub>
+              <Dropdown.SubTrigger asChild>
+                <Dropdown.Item>
+                  Elevation
+                  <ChevronRightIcon />
+                </Dropdown.Item>
+              </Dropdown.SubTrigger>
+
+              <Dropdown.SubContent sideOffset={2} alignOffset={-5}>
+                <Dropdown.Label>Elevation</Dropdown.Label>
+                <Dropdown.RadioGroup
+                  value={elevation}
+                  onValueChange={setElevation}
+                >
+                  <Dropdown.RadioItem value="none">
+                    <Dropdown.ItemIndicator>
+                      <DotFilledIcon />
+                    </Dropdown.ItemIndicator>
+                    none
+                  </Dropdown.RadioItem>
+                  <Dropdown.RadioItem value="lg">
+                    <Dropdown.ItemIndicator>
+                      <DotFilledIcon />
+                    </Dropdown.ItemIndicator>
+                    lg
+                  </Dropdown.RadioItem>
+                </Dropdown.RadioGroup>
+              </Dropdown.SubContent>
+            </Dropdown.Sub>
+          </Dropdown.Content>
+        </Dropdown.Root>
+      </Card>
     </main>
   );
 };

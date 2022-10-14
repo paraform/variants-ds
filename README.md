@@ -14,6 +14,17 @@ Css is the foundation of styling and css modules gives us a great way to have lo
 
 Stitches api is great for composing variants of a component in an easy to read way but there seems to be a current shift away from css-in-js solutions in react 18. There are a few libraries such as classname-variants & cva that give us the stitches style api whilst just generating a string for the className. We could use tailwind alone with this method but again it becomes more difficult to read and personally we hate writing states like this `hover:bg-black hover:text-white hover:etc...`.
 
+## Examples
+
+**01 - Button**
+Using the simple _cx function_.
+**02 - Card**
+Using the _variant function_ with tailwind only.
+**03 - Dropdown**
+Using the _styled function_ to wrap a radix component.
+**04 - Switch**
+Using the _variantProps function_ for a stitches style api whilst passing through props. Does not allow for adding a colorway or other classes currently.
+
 ## A note on colorways
 
 For a while now we have come to the conclusion that colorways should be seperated from the compoenent styles. A component should use generic/semantic tokens for ui. i.e:
@@ -44,3 +55,7 @@ Add the following to your VsCode settings.json to get intellisense for tailwind 
     ["variantProps\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
 ]
 ```
+
+## Feedback
+
+We would love to start a discussion around this so feel free to give feedback or craete pull requests.
