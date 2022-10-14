@@ -1,6 +1,6 @@
 # Spinoff CSS
 
-An idea for the perfect css.
+An idea for the perfect css. Refining the tailwind/css modules/stitches approach but relying more on vanilla css and using css variables.
 
 _spinoff.config.ts_
 
