@@ -15,6 +15,8 @@ module.exports = {
           cyan: rgb(0,200,255),
           red: rgb(255,0,0),
           orange: rgb(255,100,0),
+          loContrast: [white, black],
+          hiContrast: [black, white],
           primary: {
             accent: [blue, cyan]
           },
