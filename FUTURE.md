@@ -15,6 +15,8 @@ module.exports = {
           cyan: rgb(0,200,255),
           red: rgb(255,0,0),
           orange: rgb(255,100,0),
+        },
+        ui: {
           loContrast: [white, black],
           hiContrast: [black, white],
           primary: {
@@ -65,26 +67,26 @@ _globals.css_
 
 /* Themes */
 .light {
---theme-locontrast: var(--color-white)
---theme-hiContrast: var(--color-black)
+--ui-locontrast: var(--color-white)
+--ui-hiContrast: var(--color-black)
 }
 .dark {
---theme-locontrast: var(--color-black)
---theme-hiContrast: var(--color-white)
+--ui-locontrast: var(--color-black)
+--ui-hiContrast: var(--color-white)
 }
 
 .primary {
---theme-accent: var(--color-blue)
+--ui-accent: var(--color-blue)
 }
 dark.primary {
---theme-accent: var(--color-cyan)
+--ui-accent: var(--color-cyan)
 }
 
 .secondary {
---theme-accent: var(--color-red)
+--ui-accent: var(--color-red)
 }
 .dark.secondary {
---theme-accent: var(--color-orange)
+--ui-accent: var(--color-orange)
 }
 
 ```
@@ -115,13 +117,13 @@ This would be in a component scoped css module:
     border-style: solid;
 }
 .solid {
-    color: var(--theme-loContrast);
+    color: var(--ui-loContrast);
     border-color: transparent;
-     background: var(--theme-accent);
+     background: var(--ui-accent);
 }
 .outline {
-    color: var(--theme-accent);
-    border-color: var(--theme-accent);
+    color: var(--ui-accent);
+    border-color: var(--ui-accent);
     background: transparent;
 }
 
@@ -153,17 +155,18 @@ type Props =  variantPropsOf<styles>
 ## Inline styles
 
 ```
-<div className="p-2 hover(p-4)" />
+<div className="primary p-2 bg-loContrast hover(bg-accent)" />
 ```
 
 Will generate css:
 
 ```
 .p-2 {
+   background: var(--ui-loContrast);
    padding: var(--size-2);
 }
 /* States need more thought */
 ._aBcASd:hover {
-    padding: var(--size-4);
+    background: var(--ui-accent);
 }
 ```
